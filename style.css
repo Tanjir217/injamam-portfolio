@@ -1,0 +1,763 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(20, 19, 19);
+}
+
+:root {
+    --display: flex
+}
+
+:root {
+    --padding: 0px 50px
+}
+
+:root {
+    --border: 1px solid black
+}
+
+:root {
+    --home-background-color: #f4f4f4
+}
+
+:root {
+    --about-background-color: #ffffff
+}
+
+:root {
+    --home-box-background-color: #ffffff
+}
+
+:root {
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2)
+}
+
+.nav {
+    padding: var(--padding);
+    height: 60px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flx {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 160px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background: white;
+    border-radius: 3px;
+    margin-left: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.icon {
+    font-size: 18px;
+}
+
+.home-btn {
+    text-transform: uppercase;
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Optional: Hover Effect */
+.home-btn:hover,
+.logo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.button {
+    height: auto;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.others {
+    align-items: center;
+}
+
+#home {
+    background-color: var(--home-background-color);
+}
+
+.home {
+    padding: var(--padding);
+}
+
+.heading-txt {
+    position: relative;
+    z-index: 1;
+}
+
+.heading-txt h1 {
+    font-family: sans-serif;
+    text-align: center;
+    line-height: 0.8;
+    font-size: 14vw;
+    text-transform: uppercase;
+    letter-spacing: 0.9rem;
+    width: 100%;
+    margin-top: 8%;
+    margin-left: 39px;
+}
+
+.heading-txt h1 span {
+    margin-left: 200px;
+}
+
+.heading-btm-txt,
+.heading-btm-txt h2 {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    line-height: 0.5;
+    letter-spacing: 0.3rem;
+    font-size: 2rem;
+}
+
+.home-main-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-img {
+    margin-top: -20%;
+    position: relative;
+    z-index: 0;
+    height: 600px;
+}
+
+.home-img img {
+
+    mask: linear-gradient(to bottom,
+            #000 60%,
+            transparent);
+    height: 500px;
+    width: 500px;
+}
+
+.home-box {
+    position: relative;
+    height: 350px;
+    width: 400px;
+    background-color: var(--home-background-color);
+    margin-top: 80px;
+}
+
+.home-box-content {
+    height: 300px;
+    width: 265px;
+    background-color: var(--home-box-background-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.home-left-box-content p {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.home-left-box-content-list {
+    text-transform: capitalize;
+    margin-top: 30px;
+}
+
+.home-left-box-content-list ul li {
+    list-style: none;
+    padding-top: 10px;
+}
+
+.home-left-box-content-list span {
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 5px;
+}
+
+.home-right-box {
+    display: flex;
+    justify-content: end;
+    text-transform: capitalize;
+}
+
+.right-box-number {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.right-box-txt {
+    font-size: 14px;
+}
+
+.right-box-content {
+    padding: 10px;
+}
+
+.home-right-box-top-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-right-box-content-box1,
+.home-right-box-content-box2 {
+    height: 60px;
+    width: 200px;
+    border-radius: 8px;
+}
+
+.home-right-box-content-box1 {
+    box-shadow: var(--box-shadow);
+    position: relative;
+    z-index: 1;
+    background-color: var(--about-background-color);
+    margin-bottom: -5px;
+}
+
+.home-right-box-content-box2 {
+    position: relative;
+    z-index: 0;
+    align-self: flex-end;
+    margin-right: 20px;
+    background-color: #0c0c0c;
+    box-shadow: var(--box-shadow);
+}
+
+.home-right-box-content-box2 p {
+    color: #f1f1f1;
+}
+
+.img-box {
+    display: flex;
+    width: 120px;
+    margin-left: 10px;
+}
+
+.right-box-img {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: var(--border);
+    margin-left: -10px;
+}
+
+.home-right-box-bottom-content {
+    height: 100px;
+    width: 200px;
+    margin-top: 12px;
+    border-radius: 8px;
+    background-color: var(--about-background-color);
+    box-shadow: var(--box-shadow);
+}
+
+.home-bottom-conection {
+    display: flex;
+    margin-top: -12%;
+    position: relative;
+    z-index: 1;
+}
+
+.home-bottom-content {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 250px;
+    width: 500px;
+    align-items: center;
+    border-radius: 16px;
+    background-color: var(--home-background-color);
+    margin-left: 372px;
+    position: relative;
+    box-shadow: var(--box-shadow);
+}
+
+.orange-dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -54px;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid rgb(101, 99, 99);
+    padding: 5px;
+}
+
+.orange-dot-white-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: var(--about-background-color);
+}
+
+.orange-dot-orange-area {
+    height: 5px;
+    width: 5px;
+    border-radius: 15px;
+    background-color: orangered;
+}
+
+.text-box {
+    text-align: center;
+}
+
+.projects-btn {
+    margin-top: -20px;
+}
+
+.about {
+    background-color: var(--about-background-color);
+    margin: auto;
+    padding: var(--padding);
+    padding-top: 5%;
+}
+
+.about-rating-rev-growth-box {
+    background-color: var(--about-background-color);
+    padding: var(--padding);
+    height: 150px;
+    margin-top: -60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 16px;
+}
+
+.about-client-box {
+    display: flex;
+    align-items: center;
+    height: 150px;
+    width: 365px;
+    border-radius: 16px;
+    text-transform: capitalize;
+}
+
+.client-rating-box {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+}
+
+.rating-rev-number {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 750;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.plus {
+    font-weight: 100;
+}
+
+.client-rev-box {
+    display: flex;
+    flex-direction: column;
+    margin-left: 113px;
+}
+
+.client-rating-box,
+.client-rev-box {
+    position: relative;
+    height: 70px;
+    width: 250px;
+    padding: 10px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--home-background-color);
+    border-radius: 8px;
+}
+
+.about-header-txt {
+    font-size: 24px;
+    font-weight: bold;
+    margin: auto;
+    text-align: center;
+    text-transform: uppercase;
+    width: 800px;
+}
+
+.about-main {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-img img {
+    border-radius: 12px;
+    height: 500px;
+    width: 500px;
+}
+
+.about-main-txt {
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+    height: 500px;
+
+}
+
+.exp {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 50px;
+    box-shadow: var(--box-shadow);
+    background-color: #f1f1f1;
+}
+
+.exp-number {
+    font-size: 50px;
+    font-weight: 800;
+    color: #0b111a;
+    line-height: 1;
+    letter-spacing: -4px;
+    margin-bottom: 5px;
+    z-index: 2;
+}
+
+.exp-text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1a202c;
+    z-index: 2;
+}
+
+.exp-orange-dot {
+    position: absolute;
+    bottom: -10px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    background-color: #ff5100;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Container styling to match your dark theme */
+.text-banner {
+    background-color: #000000;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 98px;
+    /* Make it huge! */
+    text-transform: uppercase;
+    white-space: nowrap;
+    /* text-align: center; */
+    overflow: hidden;
+}
+
+/* 1. The Normal Text */
+.solid {
+    color: #ffffff;
+}
+
+/* 2. THE MAGIC: The Outlined Text */
+.outlined {
+    /* Step 1: Hide the inside fill */
+    color: transparent;
+
+    /* Step 2: Draw a 2px white line around the letters */
+    -webkit-text-stroke: 2px #ffffff;
+}
+.services {
+    background-color: #000;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-x: hidden;
+}
+
+ /* --- The Main Container --- */
+.service-pill-card {
+    background-color: #070707; /* Very dark, almost black */
+    border: 1px solid #222; /* Subtle dark gray border */
+    
+    /* THE TRICK: 999px makes the edges perfectly round (Pill Shape) */
+    border-radius: 999px; 
+    
+    /* Flexbox to separate left and right sides */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* Padding: More space on the left, less on the right so the image fits snug */
+    padding: 15px 15px 15px 50px; 
+    
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* --- Left Side (Text & Tags) --- */
+.service-info {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Space between the "01 ->" and the Title */
+}
+
+.step-number {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap; /* Stops the arrow from wrapping to the next line */
+}
+
+.service-details h2 {
+    color: #fff;
+    font-family: 'Archivo Black', sans-serif; /* Using your portfolio font! */
+    font-size: 36px;
+    margin: 0 0 15px 0;
+    line-height: 1;
+    position: relative; 
+    width: max-content;
+}
+
+/* --- The Little Tags --- */
+.tags-row {
+    display: flex;
+    gap: 12px;
+}
+
+.tag {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    
+    /* Tag Styling */
+    border: 1px solid #333;
+    padding: 6px 14px;
+    border-radius: 20px;
+    
+    /* Flex to align the dot and text */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Creating the white dot using a pseudo-element (No HTML needed!) */
+.tag::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+/* --- Right Side (Image Box) --- */
+.service-image-box {
+    width: 350px; /* Width of the inner pill */
+    height: 120px;
+    border-radius: 999px; /* Rounds the image container */
+    overflow: hidden; /* Cuts off any parts of the image outside the rounded box */
+}
+
+.service-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the box without stretching */
+}
+.serv-box:nth-child(1),
+.serv-box:nth-child(3) {
+    align-self: flex-start;
+}
+
+.serv-box:nth-child(2),
+.serv-box:nth-child(4) {
+    align-self: flex-end;
+    padding-right: 50px;
+}
+
+.serv-box:nth-child(4) {
+    margin-bottom: 50px;
+}
+/* --- HOVER ANIMATION: The Pill Card --- */
+
+/* 1. Add smooth transitions to the base elements (Professional Touch) */
+/* This tells the browser to change the color over 0.3 seconds on any change. */
+
+.service-pill-card .step-number {
+    transition: color 0.3s ease; /* Smoothly animates the color property */
+}
+
+.service-pill-card h2 {
+    transition: color 0.3s ease; /* Smoothly animates the color property */
+}
+
+/* 2. THE TRIGGER: Change the color on hover */
+/* When the main .service-pill-card container is hovered... */
+
+.service-pill-card:hover .step-number {
+    color: #FF5722; /* ...change the number and arrow text to Orange */
+}
+
+.service-pill-card:hover h2 {
+    color: #FF5722; /* ...and change the 'h2' heading text to Orange */
+}
+/* --- THE UNDERLINE MAGIC --- */
+
+/* 1. Create the line and hide it */
+.service-details h2::after {
+    content: ''; /* Creates the element out of thin air */
+    position: absolute;
+    bottom: -8px; /* Pushes it just below the text */
+    left: 0;
+    
+    width: 100%; /* Makes it the full width of the text */
+    height: 3px; /* Thickness of the line */
+    background-color: #FF5722; /* The exact orange color */
+    
+    /* The Animation Setup */
+    transform: scaleX(0); /* Shrinks the line horizontally to invisible */
+    transform-origin: left; /* Tells it to grow from left to right! */
+    transition: transform 0.4s ease; /* Controls the speed of the sweep */
+}
+
+/* 2. The Trigger: Grow the line on hover */
+.service-pill-card:hover h2::after {
+    transform: scaleX(1); /* Grows the line back to 100% width */
+}
+.work {
+    background-color: #fff9f9;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-x: hidden;
+}
+
+.works-box {
+    border: var(--border);
+    height: 400px;
+    width: 400px;
+}
+
+.works-box:nth-child(1),
+.works-box:nth-child(3) {
+    align-self: flex-start;
+    margin-left: 0px;
+}
+
+.works-box:nth-child(2) {
+    align-self: flex-end;
+    margin-right: 0px;
+}
+
+.work-project {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects {
+    height: 200px;
+    width: 200px;
+    border: var(--border);
+    border-radius: 50%;
+    position: relative;
+    margin-top: 200px;
+}
+
+.client-review-main {
+    padding: var(--padding);
+    text-align: center;
+}
+
+.client-reviews {
+    display: flex;
+    justify-content: space-around;
+}
+
+.client-rev {
+    height: 400px;
+    width: 400px;
+    border: var(--border);
+}
+
+.contact-me {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding);
+}
+
+.contact {
+    border: var(--border);
+    height: 400px;
+    width: 400px;
+}
+
+.footer {
+    border: var(--border);
+}
+
+.footer-box {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding);
+}
+
+.foot-box {
+    height: 200px;
+    width: 200px;
+    border: var(--border);
+}
+
+/* emni */
+.works-box {
+    overflow: hidden;
+}
+
+.projects {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
