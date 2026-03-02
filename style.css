@@ -429,25 +429,31 @@
 
 .about-main-txt {
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     width: 650px;
     height: 500px;
 
 }
 
+.main-txt {
+    height: 260px;
+}
+
 .exp {
+    text-transform: capitalize;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 200px;
-    width: 200px;
+    height: 220px;
+    width: 220px;
     border-radius: 50%;
     justify-content: center;
     text-align: center;
     overflow: hidden;
-    margin-top: 50px;
+    /* margin-top: 10px; */
     box-shadow: var(--box-shadow);
     background-color: #f1f1f1;
 }
@@ -472,7 +478,8 @@
 .exp-orange-dot {
     position: absolute;
     bottom: -10px;
-    right: 15px;
+    top: 160px;
+    right: 10px;
     width: 45px;
     height: 45px;
     background-color: #ff5100;
@@ -507,6 +514,7 @@
     /* Step 2: Draw a 2px white line around the letters */
     -webkit-text-stroke: 2px #ffffff;
 }
+
 .services {
     background-color: #000;
     padding: var(--padding);
@@ -516,22 +524,24 @@
     overflow-x: hidden;
 }
 
- /* --- The Main Container --- */
+/* --- The Main Container --- */
 .service-pill-card {
-    background-color: #070707; /* Very dark, almost black */
-    border: 1px solid #222; /* Subtle dark gray border */
-    
+    background-color: #070707;
+    /* Very dark, almost black */
+    border: 1px solid #222;
+    /* Subtle dark gray border */
+
     /* THE TRICK: 999px makes the edges perfectly round (Pill Shape) */
-    border-radius: 999px; 
-    
+    border-radius: 999px;
+    /* height: 200px; */
     /* Flexbox to separate left and right sides */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     /* Padding: More space on the left, less on the right so the image fits snug */
-    padding: 15px 15px 15px 50px; 
-    
+    padding: 15px 15px 15px 50px;
+
     width: 100%;
     max-width: 900px;
     margin: 20px auto;
@@ -541,23 +551,26 @@
 .service-info {
     display: flex;
     align-items: center;
-    gap: 30px; /* Space between the "01 ->" and the Title */
+    gap: 30px;
+    /* Space between the "01 ->" and the Title */
 }
 
 .step-number {
     color: #fff;
     font-size: 14px;
     font-weight: bold;
-    white-space: nowrap; /* Stops the arrow from wrapping to the next line */
+    white-space: nowrap;
+    /* Stops the arrow from wrapping to the next line */
 }
 
 .service-details h2 {
     color: #fff;
-    font-family: 'Archivo Black', sans-serif; /* Using your portfolio font! */
+    font-family: 'Archivo Black', sans-serif;
+    /* Using your portfolio font! */
     font-size: 36px;
     margin: 0 0 15px 0;
     line-height: 1;
-    position: relative; 
+    position: relative;
     width: max-content;
 }
 
@@ -572,12 +585,12 @@
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.5px;
-    
+
     /* Tag Styling */
     border: 1px solid #333;
     padding: 6px 14px;
     border-radius: 20px;
-    
+
     /* Flex to align the dot and text */
     display: flex;
     align-items: center;
@@ -596,17 +609,22 @@
 
 /* --- Right Side (Image Box) --- */
 .service-image-box {
-    width: 350px; /* Width of the inner pill */
+    width: 350px;
+    /* Width of the inner pill */
     height: 120px;
-    border-radius: 999px; /* Rounds the image container */
-    overflow: hidden; /* Cuts off any parts of the image outside the rounded box */
+    border-radius: 999px;
+    /* Rounds the image container */
+    overflow: hidden;
+    /* Cuts off any parts of the image outside the rounded box */
 }
 
 .service-image-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image fills the box without stretching */
+    object-fit: cover;
+    /* Ensures the image fills the box without stretching */
 }
+
 .serv-box:nth-child(1),
 .serv-box:nth-child(3) {
     align-self: flex-start;
@@ -621,106 +639,228 @@
 .serv-box:nth-child(4) {
     margin-bottom: 50px;
 }
+
 /* --- HOVER ANIMATION: The Pill Card --- */
 
 /* 1. Add smooth transitions to the base elements (Professional Touch) */
 /* This tells the browser to change the color over 0.3 seconds on any change. */
 
 .service-pill-card .step-number {
-    transition: color 0.3s ease; /* Smoothly animates the color property */
+    transition: color 0.3s ease;
+    /* Smoothly animates the color property */
 }
 
 .service-pill-card h2 {
-    transition: color 0.3s ease; /* Smoothly animates the color property */
+    transition: color 0.3s ease;
+    /* Smoothly animates the color property */
 }
 
 /* 2. THE TRIGGER: Change the color on hover */
 /* When the main .service-pill-card container is hovered... */
 
 .service-pill-card:hover .step-number {
-    color: #FF5722; /* ...change the number and arrow text to Orange */
+    color: #FF5722;
+    /* ...change the number and arrow text to Orange */
 }
 
 .service-pill-card:hover h2 {
-    color: #FF5722; /* ...and change the 'h2' heading text to Orange */
+    color: #FF5722;
+    /* ...and change the 'h2' heading text to Orange */
 }
+
 /* --- THE UNDERLINE MAGIC --- */
 
 /* 1. Create the line and hide it */
 .service-details h2::after {
-    content: ''; /* Creates the element out of thin air */
+    content: '';
+    /* Creates the element out of thin air */
     position: absolute;
-    bottom: -8px; /* Pushes it just below the text */
+    bottom: -8px;
+    /* Pushes it just below the text */
     left: 0;
-    
-    width: 100%; /* Makes it the full width of the text */
-    height: 3px; /* Thickness of the line */
-    background-color: #FF5722; /* The exact orange color */
-    
+
+    width: 100%;
+    /* Makes it the full width of the text */
+    height: 3px;
+    /* Thickness of the line */
+    background-color: #FF5722;
+    /* The exact orange color */
+
     /* The Animation Setup */
-    transform: scaleX(0); /* Shrinks the line horizontally to invisible */
-    transform-origin: left; /* Tells it to grow from left to right! */
-    transition: transform 0.4s ease; /* Controls the speed of the sweep */
+    transform: scaleX(0);
+    /* Shrinks the line horizontally to invisible */
+    transform-origin: left;
+    /* Tells it to grow from left to right! */
+    transition: transform 0.4s ease;
+    /* Controls the speed of the sweep */
 }
 
 /* 2. The Trigger: Grow the line on hover */
 .service-pill-card:hover h2::after {
-    transform: scaleX(1); /* Grows the line back to 100% width */
-}
-.work {
-    background-color: #fff9f9;
-    padding: var(--padding);
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    overflow-x: hidden;
+    transform: scaleX(1);
+    /* Grows the line back to 100% width */
 }
 
-.works-box {
-    border: var(--border);
-    height: 400px;
+/* --- WORKS SECTION --- */
+.works-section {
+    position: relative;
+    background-color: var(--home-background-color);
+    padding: var(--padding);
+    /* padding-top: 100px; */
+    /* padding-bottom: 250px; */
+}
+
+/* 1. The Giant Sticky Background Text */
+.works-bg-text {
+    position: sticky;
+    top: 20vh;
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22vw;
+    color: #111;
+    margin: 0;
+    z-index: 0;
+    line-height: 0.8;
+}
+
+/* 2. The Grid Container */
+.works-grid {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding);
+}
+
+.works-box-1,
+.works-box-3 {
+    align-self: flex-start;
+}
+
+.works-box-2,
+.works-box-4 {
+    align-self: flex-end;
+}
+
+/* --- PROJECT CARD STYLING --- */
+.project-card {
+    background: var(--home-box-background-color);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    /* height: 400px; */
     width: 400px;
 }
 
-.works-box:nth-child(1),
-.works-box:nth-child(3) {
-    align-self: flex-start;
-    margin-left: 0px;
-}
-
-.works-box:nth-child(2) {
-    align-self: flex-end;
-    margin-right: 0px;
-}
-
-.work-project {
+.card-header {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
 }
 
-.projects {
-    height: 200px;
-    width: 200px;
-    border: var(--border);
+.card-title-area h3 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+.card-tags {
+    display: flex;
+    gap: 15px;
+}
+
+.card-tags span {
+    font-size: 10px;
+    font-weight: 700;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.card-icon {
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
+    background-color: var(--home-background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.card-image-box {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Card Hover Effects */
+.project-card:hover .card-icon {
+    background-color: #FF5722;
+    color: #ffffff;
+    transform: rotate(45deg);
+}
+
+.project-card:hover .card-image-box img {
+    transform: scale(1.05);
+}
+
+/* --- DISCOVER PROJECTS CIRCLE --- */
+.discover-projects-wrapper {
+    margin-top: -215px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.porjects-box {
+    align-items: center;
     position: relative;
-    margin-top: 200px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.projects-box p {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.porjects-box:hover {
+    transform: scale(1.05);
 }
 
 .client-review-main {
+    margin-bottom: 50px;
+    margin-top: 80px;
     padding: var(--padding);
     text-align: center;
 }
 
 .client-reviews {
+    margin-top: 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .client-rev {
-    height: 400px;
-    width: 400px;
+    height: 350px;
+    width: 550px;
     border: var(--border);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
 }
 
 .contact-me {
