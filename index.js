@@ -13,13 +13,26 @@ menuBtn.addEventListener('click', (e) => {
     }
 });
 // AUTO-CLOSE DROPDOWN ON LINK CLICK
+// FORCED SAFARI SMOOTH SCROLL FOR DROPDOWN LINKS
 const dropdownLinks = document.querySelectorAll('#dropdown-menu a');
 
 dropdownLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        // This instantly hides the menu after you click a destination
+    link.addEventListener('click', function(e) {
+        e.preventDefault(); // Stop the instant snap
+        
+        // Hide the menu
         dropdownMenu.classList.remove('dropdown-visible');
         dropdownMenu.classList.add('dropdown-hidden');
+        
+        // Get the target section ID (e.g., "#about")
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        // Force smooth scroll using JavaScript math
+        window.scrollTo({
+            top: targetSection.offsetTop,
+            behavior: 'smooth'
+        });
     });
 });
 // 2. VIEW PROJECTS BUTTON SMOOTH SCROLL

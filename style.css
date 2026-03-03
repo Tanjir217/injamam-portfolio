@@ -171,10 +171,11 @@ html {
 }
 
 .home-img img {
-
-    mask: linear-gradient(to bottom,
-            #000 60%,
-            transparent);
+    /* Safari Support */
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent);
+    /* Standard */
+    mask-image: linear-gradient(to bottom, #000 60%, transparent);
+    
     height: 500px;
     width: 500px;
 }
@@ -685,26 +686,27 @@ html {
 /* 1. Create the line and hide it */
 .service-details h2::after {
     content: '';
-    /* Creates the element out of thin air */
     position: absolute;
     bottom: -8px;
-    /* Pushes it just below the text */
     left: 0;
-
     width: 100%;
-    /* Makes it the full width of the text */
     height: 3px;
-    /* Thickness of the line */
     background-color: #FF5722;
-    /* The exact orange color */
-
-    /* The Animation Setup */
+    
+    /* Safari Support */
+    -webkit-transform: scaleX(0);
+    -webkit-transform-origin: left;
+    -webkit-transition: -webkit-transform 0.4s ease;
+    
+    /* Standard */
     transform: scaleX(0);
-    /* Shrinks the line horizontally to invisible */
     transform-origin: left;
-    /* Tells it to grow from left to right! */
     transition: transform 0.4s ease;
-    /* Controls the speed of the sweep */
+}
+
+.service-pill-card:hover h2::after {
+    -webkit-transform: scaleX(1); /* Safari Support */
+    transform: scaleX(1);
 }
 
 /* 2. The Trigger: Grow the line on hover */
