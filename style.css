@@ -841,56 +841,403 @@
 .porjects-box:hover {
     transform: scale(1.05);
 }
-
+/* --- CLIENT REVIEWS SECTION --- */
 .client-review-main {
-    margin-bottom: 50px;
-    margin-top: 80px;
-    padding: var(--padding);
+    padding: 100px 50px;
+    background-color: var(--home-background-color);
     text-align: center;
 }
 
-.client-reviews {
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-between;
+.review-main-title {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 24px; /* Adjust size as needed */
+    text-transform: uppercase;
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+    line-height: 1.4;
+    color: #111;
 }
 
-.client-rev {
-    height: 350px;
-    width: 550px;
-    border: var(--border);
+.client-reviews {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between the two cards */
+    flex-wrap: wrap; /* Helps cards stack on smaller screens */
+}
+
+/* The Main White Card */
+.client-rev-card {
+    background-color: var(--home-box-background-color);
     border-radius: 12px;
     box-shadow: var(--box-shadow);
-}
-
-.contact-me {
     display: flex;
-    justify-content: space-between;
-    padding: var(--padding);
+    width: 550px;
+    padding: 15px; /* Creates the white frame around the image */
+    gap: 25px; /* Space between image and text */
+    text-align: left;
+    transition: transform 0.3s ease;
 }
 
-.contact {
-    border: var(--border);
-    height: 400px;
-    width: 400px;
+.client-rev-card:hover {
+    transform: translateY(-5px); /* Gentle float effect on hover */
 }
 
-.footer {
-    border: var(--border);
-}
-
-.footer-box {
-    display: flex;
-    justify-content: space-between;
-    padding: var(--padding);
-}
-
-.foot-box {
-    height: 200px;
+/* Left Side: Image & Play Button */
+.client-image-wrapper {
+    position: relative;
     width: 200px;
-    border: var(--border);
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0; /* Prevents the image from shrinking */
 }
 
+.client-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    height: 45px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1); /* Zooms slightly on hover */
+}
+
+.play-btn i {
+    color: #FF5722; /* The orange play icon */
+    font-size: 16px;
+    margin-left: 3px; /* Optically centers the triangle */
+}
+
+/* Right Side: Text Content */
+.client-text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.review-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.quote-mark {
+    font-family: 'Georgia', serif; /* Gives the quote a curvy look */
+    font-size: 60px;
+    color: #FF5722;
+    line-height: 0.5;
+    margin-top: 20px;
+}
+
+.stars-pill {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 5px 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Soft shadow for the pill */
+    display: flex;
+    gap: 3px;
+}
+
+.stars-pill i {
+    color: #111; /* Black stars */
+    font-size: 10px;
+}
+
+.review-text {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.client-info h4 {
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 4px 0;
+    color: #111;
+}
+
+.client-info p {
+    font-size: 12px;
+    color: #777;
+    margin: 0;
+}
+/* =========================================
+   CONTACT SECTION
+   ========================================= */
+#contact-section {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 100px 50px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Left Side Info --- */
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h2 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 45px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.contact-details p {
+    font-size: 16px;
+    color: #cccccc;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.contact-details a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: #c4ff00; /* Neon hover effect */
+}
+
+/* Profile Card */
+.contact-profile-card {
+    display: flex;
+    align-items: center;
+    background-color: #0c0c0c; /* Very dark grey box */
+    border: 1px solid #222;
+    padding: 15px;
+    border-radius: 12px;
+    max-width: 380px;
+    gap: 20px;
+}
+
+.contact-profile-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.profile-details h4 {
+    margin: 0 0 5px 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.profile-details p {
+    margin: 0 0 10px 0;
+    color: #888;
+    font-size: 12px;
+}
+
+.profile-socials {
+    display: flex;
+    gap: 10px;
+}
+
+.profile-socials a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.profile-socials a:hover {
+    background-color: #c4ff00;
+    transform: translateY(-2px);
+}
+
+/* --- Right Side Form --- */
+.contact-form-wrapper {
+    flex: 1;
+    max-width: 500px;
+}
+
+.contact-form-wrapper form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Dark Input Fields */
+.contact-form-wrapper input,
+.contact-form-wrapper textarea {
+    width: 100%;
+    background-color: #0c0c0c; 
+    border: 1px solid #222;
+    padding: 18px 20px;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box; 
+}
+
+.contact-form-wrapper input:focus,
+.contact-form-wrapper textarea:focus {
+    border-color: #555; /* Highlights the box slightly when typing */
+}
+
+.contact-form-wrapper textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #c4ff00; /* The striking neon button */
+    color: #000000;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+    padding: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-top: 5px;
+}
+
+.submit-btn:hover {
+    background-color: #a0d800;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   FOOTER SECTION
+   ========================================= */
+#footer-section {
+    background-color: #000000;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* The Top Line with Links */
+.footer-top {
+    padding: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    border-top: 1px solid #222; 
+    border-bottom: 1px solid #222;
+    position: relative;
+}
+
+.footer-links h4, .footer-copy h4 {
+    margin: 0 0 5px 0;
+    font-size: 15px;
+    color: #fff;
+}
+
+.footer-links p, .footer-copy p {
+    margin: 0;
+    font-size: 13px;
+    color: #888;
+}
+
+.footer-copy {
+    text-align: right;
+}
+
+/* The Magic Overlapping Orange Arrow */
+.back-to-top {
+    position: absolute;
+    left: 50%;
+    top: 29px;
+}
+
+.back-to-top a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    background-color: #FF5722;
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top a:hover {
+    transform: scale(1.1);
+}
+
+/* The Giant Text at the very bottom */
+.footer-bottom {
+    margin-top: 20px;
+    text-align: center;
+    padding: 0 50px 0 50px;
+}
+
+.giant-footer-text {
+    /* margin-top: 20px; */
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 20vw; /* Scales massively with screen size */
+    color: #ffffff;
+    margin: 0;
+    line-height: 0.75;
+    letter-spacing: -0.02em;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Stacks the form under the text on phones */
+    }
+    .footer-top {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+        padding-top: 50px; 
+    }
+    .footer-copy {
+        text-align: center;
+    }
+}
 /* emni */
 .works-box {
     overflow: hidden;
@@ -900,4 +1247,7 @@
     display: flex;
     text-align: center;
     align-items: center;
+}
+.footer-top-box{
+    /* border: 1px solid white; */
 }
