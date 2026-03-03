@@ -13,6 +13,20 @@
     <!-- home -->
     <div id="home">
         <div class="nav flx">
+            <div id="dropdown-menu" class="dropdown-hidden">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#works">Works</a>
+                <a href="#contact-section">Contact</a>
+            </div>
+
+            <div class="mobile-bottom-nav">
+                <a href="#home"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                <a href="#about"><i class="fa-solid fa-user"></i><span>About</span></a>
+                <a href="#services"><i class="fa-solid fa-briefcase"></i><span>Services</span></a>
+                <a href="#contact-section"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+            </div>
             <div class="logo">
                 <p>INJAMAM</p>
             </div>
@@ -23,10 +37,10 @@
                 <div class="box icon"><a href="#"><i class="fa-brands fa-linkedin"></i></a></div>
             </div>
             <div class="others flx">
-                <div class="box">
+                <div class="box" id="menu-btn">
                     <a href="#"><i class="fa-solid fa-bars"></i></a>
                 </div>
-                <div class="button">
+                <div class="button" id="cv-btn">
                     <button class="home-btn">DOWNLOAD CV</button>
                 </div>
             </div>
@@ -116,7 +130,7 @@
                     <div class="text-box">
                         <h2>Skyrocket Your Ecommerce Business with Proven Digital Marketing Strategies That Convert</h2>
                     </div>
-                    <div class="button">
+                    <div class="button" id="view-projects-btn">
                         <button class="home-btn projects-btn">view projects</button>
                     </div>
                 </div>
@@ -474,12 +488,12 @@
                 </div>
             </div>
 
-            <div class="contact-form-wrapper">
+            <div class="contact-form-wrapper" id="contactForm">
                 <form action="#" method="post">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
+                    <input type="text" name="Name" placeholder="Name" required>
+                    <input type="email" placeholder="Email" name="Email" required>
                     <textarea placeholder="Message" rows="5" required></textarea>
-                    <button type="submit" class="submit-btn">SUBMIT MESSAGE</button>
+                    <button type="submit" class="submit-btn" id="submit-btn">SUBMIT MESSAGE</button>
                 </form>
             </div>
 
@@ -492,7 +506,7 @@
                 <h4>Quick Links</h4>
                 <p>Home. About Me. Portfolio. Service. Contact</p>
             </div>
-            
+
             <div class="back-to-top">
                 <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
             </div>
@@ -508,6 +522,7 @@
         </div>
 
     </div>
+    <script src="index.js"></script>
 </body>
 
 </html>
