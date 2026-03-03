@@ -1,8 +1,12 @@
+/* Add this at the very top of your CSS file */
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     padding: 0;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(20, 19, 19);
 }
 
 :root {
@@ -74,7 +78,12 @@
 .icon {
     font-size: 18px;
 }
-
+/* Fix to keep icon links black instead of default browser blue */
+.box a, 
+.box a i {
+    color: #000000;
+    text-decoration: none; /* This also removes any unwanted underlines */
+}
 .home-btn {
     text-transform: uppercase;
     background-color: #000;
@@ -1321,48 +1330,182 @@
 .mobile-bottom-nav a:hover i {
     color: #c4ff00; /* Neon highlight */
 }
+/* =========================================
+   RESPONSIVE DESIGN (Tablets & Mobile)
+   ========================================= */
+
+/* 1. TABLET & SURFACE BOOK OPTIMIZATION (Max 1024px) 
+   Everything stays, but perfectly resizes to fit the screen */
+@media (max-width: 1024px) {
+    .nav { padding: 0 20px; }
+    
+    /* Shrink the massive hero font */
+    .heading-txt h1 { font-size: 10vw; }
+    .heading-txt h1 span { margin-left: 100px; }
+    
+    /* Shrink images proportionally */
+    .home-img img { height: 400px; width: 400px; }
+    
+    /* Reorganize sections to use flexbox better */
+    .home-main-content { justify-content: space-around; }
+    .home-box { width: 300px; margin-top: 50px; }
+    .home-box-content { width: 100%; height: auto; padding: 20px; }
+    
+    /* Resize the connection box you wanted to keep here */
+    .home-bottom-content { 
+        width: 80%; 
+        max-width: 600px; 
+        margin-left: 0; 
+        height: auto; 
+        padding: 30px; 
+        text-align: center;
+    }
+    .home-bottom-content h2 { font-size: 20px; }
+
+    /* Shrink About Section */
+    .about-main { flex-direction: column; align-items: center; gap: 40px; }
+    .about-main-txt { width: 100%; max-width: 650px; height: auto; text-align: center; align-items: center;}
+    .about-img img { width: 100%; max-width: 500px; height: auto; }
+    .about-header-txt { width: 100%; font-size: 20px; }
+
+    /* Adjust grids to prevent overflowing */
+    .works-grid { padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 30px; }
+    .works-box-1, .works-box-2, .works-box-3, .works-box-4 { align-self: center; margin: 0; }
+    .discover-projects-wrapper { margin-top: 0; align-self: center; padding: 0; }
+    
+    .client-reviews { flex-direction: column; align-items: center; }
+    .client-rev-card { width: 90%; }
+}
+
 
 /* =========================================
-   MOBILE RESPONSIVENESS (Phones & Tablets)
+   SMARTPHONE OPTIMIZATION (Max 768px)
    ========================================= */
-@media (max-width: 1024px) {
-    /* Show mobile nav, hide top nav stuff */
-    .mobile-bottom-nav { display: flex; }
-    .others .button, .social.flx { display: none; }
-    
-    /* Fix fixed widths to 100% so they stack nicely */
-    .home-main-content, .about-main, .about-rating-rev-growth-box, 
-    .works-grid, .client-reviews, .contact-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
+@media (max-width: 768px) {
+    /* 1. GLOBAL SPACING & ALIGNMENT
+       Adds breathing room so sections don't collapse together */
+    /* #home, #about, #services, #works, #client-review-main, #contact-section {
+        padding: 60px 20px; 
+    } */
 
-    .home-box, .about-main-txt, .about-img img, .service-pill-card, 
-    .client-rev-card, .works-box, .contact-form-wrapper {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
+    /* Navbar & Menus */
+    .mobile-bottom-nav { display: flex; }
+    .social.flx { display: none; }
+    #menu-btn { display: none !important; } 
+    #cv-btn { display: block; } 
+    .logo { width: auto; font-size: 18px; box-shadow: none; }
+    .home-btn { padding: 8px 12px; font-size: 12px; }
+
+    /* 2. HOME SECTION */
+    .heading-txt, .home-right-box, .home-bottom-conection { display: none !important; } 
+    .home-main-content { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+    .home-img { order: -1; margin-top: 0; height: auto; } /* Image on top */
+    .home-img img { height: 280px; width: 280px; }
+    .home-left-box { order: 2; width: 100%; display: flex; justify-content: center; margin-top: 0; }
+    
+    /* Making the info box much smaller for mobile */
+    .home-box-content { width: 100%; max-width: 280px; height: 220px; }
+    .home-left-box-content p { font-size: 14px; }
+    .home-left-box-content-list { margin-top: 10px; }
+    .home-left-box-content-list span { font-size: 13px; }
+
+    /* 3. ABOUT SECTION */
+    .about-rating-rev-growth-box, .exp { display: none; } 
+    .about-main { margin: 20px 0; flex-direction: column; align-items: center; gap: 30px; }
+    .about-img img { width: 100%; max-width: 300px; height: auto; }
+    .about-header-txt { width: 100%; font-size: 15px; }
+    .main-txt { font-size: 14px; height: auto; text-align: justify; }
+
+    /* 4. SERVICES SECTION */
+    .services { 
+        padding: 0 !important; /* Removes leftover desktop padding */
+        align-items: center; /* Forces the column to the direct center */
+    }
+    
+    .text-banner { font-size: 35px; padding: 15px 0; } 
+    
+    .serv-box { 
+        width: 100%; 
+        display: flex;
+        justify-content: center;
+        padding: 0 !important; 
+        margin: 0 auto 20px auto !important; 
+        align-self: center !important; 
+    } 
+    
+    /* Smaller Service Pill Card */
+    .service-pill-card { 
+        box-sizing: border-box; /* THE FIX: Stops padding from pushing the box to the right! */
+        width: 100%;
+        max-width: 320px;
+        flex-direction: column; 
+        border-radius: 15px; 
+        padding: 20px 15px; 
+        text-align: center; 
+        gap: 15px; 
         margin: 0 !important;
     }
-
-    .home-bottom-content {
-        width: 100%;
-        margin-left: 0;
-        margin-top: 50px;
-    }
-
-    .heading-txt h1 { font-size: 18vw; }
-    .giant-footer-text { font-size: 15vw; }
     
-    .service-info { flex-direction: column; text-align: center; }
-    .service-image-box { display: none; /* Hide images on mobile to save space */ }
+    .service-info { flex-direction: column; gap: 5px; }
+    .service-details h2 { font-size: 20px; white-space: normal; width: auto; text-align: center; margin-bottom: 10px; }
+    .service-details h2::after { display: none; } 
+    .tags-row { flex-wrap: wrap; justify-content: center; gap: 8px; }
+    .tag { padding: 4px 10px; font-size: 9px; }
+    .service-image-box { width: 100%; height: 150px; border-radius: 10px; }
+
+    /* 5. WORKS SECTION */
+    .works-section { padding-top: 40px; padding-bottom: 40px; }
+    .works-bg-text { font-size: 25vw; top: 10vh; }
+    .works-grid { padding: 0; gap: 30px; margin-top: 0; }
     
-    .client-rev-card { flex-direction: column; }
+    /* Smaller Project Cards */
+    .project-card { width: 100%; max-width: 300px; padding: 15px; }
+    .card-header { margin-bottom: 15px; }
+    .card-title-area h3 { font-size: 16px; }
+    .card-tags span { font-size: 9px; }
+    .card-icon { width: 35px; height: 35px; font-size: 14px; }
+    .card-image-box { height: 180px; }
+    
+    /* Smaller Discover Circle */
+    .discover-projects-wrapper { margin-top: 0; padding-left: 0; display: flex; justify-content: center; }
+    .projects-circle { width: 140px; height: 140px; }
+    .projects-circle p { font-size: 11px; }
+
+    /* 6. CLIENT REVIEWS */
+    .review-main-title { font-size: 16px; margin-bottom: 30px; }
+    .client-rev-card { flex-direction: column; padding: 15px; gap: 15px; width: 100%; max-width: 300px; }
     .client-image-wrapper { width: 100%; height: 200px; }
+    .quote-mark { font-size: 35px; margin-top: 5px; }
+    .review-text { font-size: 13px; margin-bottom: 15px; }
+
+    /* 7. CONTACT SECTION */
+    .contact-container { display: flex; flex-direction: column; gap: 40px; align-items: center; }
+    .contact-form-wrapper { order: -1; width: 100%; max-width: 320px; } /* Form on top */
+    .contact-info { order: 2; text-align: center; display: flex; flex-direction: column; align-items: center; width: 100%; }
+    .contact-info h2 { font-size: 26px; }
+    .contact-details p { font-size: 14px; }
+    .contact-profile-card { flex-direction: column; text-align: center; width: 100%; max-width: 280px; gap: 15px; }
+
+    /* 8. FOOTER SECTION */
+    .giant-footer-text { display: none; } 
     
-    /* Undo the staggered grid for mobile */
-    .works-box-1, .works-box-2, .works-box-3, .works-box-4 { align-self: center; }
+    /* Hide Links and Copyright */
+    .footer-links, .footer-copy { display: none; }
     
-    body { padding-bottom: 100px; /* Space for bottom nav */ }
+    .footer-top { 
+        padding: 40px 0 100px 0; /* Huge bottom padding to clear the glass nav */
+        border: none; /* Removes the top and bottom lines */
+        display: flex; 
+        justify-content: center; /* Centers the button perfectly */
+    }
+    
+    /* Reset the button positioning so it just sits naturally in the middle */
+    .back-to-top {
+        position: relative; 
+        left: auto;
+        top: auto;
+        transform: none; 
+    }
+    
+    body { padding-bottom: 80px; } 
 }
