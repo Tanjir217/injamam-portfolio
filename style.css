@@ -78,12 +78,15 @@ html {
 .icon {
     font-size: 18px;
 }
+
 /* Fix to keep icon links black instead of default browser blue */
-.box a, 
+.box a,
 .box a i {
     color: #000000;
-    text-decoration: none; /* This also removes any unwanted underlines */
+    text-decoration: none;
+    /* This also removes any unwanted underlines */
 }
+
 .home-btn {
     text-transform: uppercase;
     background-color: #000;
@@ -850,6 +853,7 @@ html {
 .porjects-box:hover {
     transform: scale(1.05);
 }
+
 /* --- CLIENT REVIEWS SECTION --- */
 .client-review-main {
     padding: 100px 50px;
@@ -859,7 +863,8 @@ html {
 
 .review-main-title {
     font-family: 'Archivo Black', sans-serif;
-    font-size: 24px; /* Adjust size as needed */
+    font-size: 24px;
+    /* Adjust size as needed */
     text-transform: uppercase;
     max-width: 900px;
     margin: 0 auto 60px auto;
@@ -870,8 +875,10 @@ html {
 .client-reviews {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Space between the two cards */
-    flex-wrap: wrap; /* Helps cards stack on smaller screens */
+    gap: 30px;
+    /* Space between the two cards */
+    flex-wrap: wrap;
+    /* Helps cards stack on smaller screens */
 }
 
 /* The Main White Card */
@@ -881,14 +888,17 @@ html {
     box-shadow: var(--box-shadow);
     display: flex;
     width: 550px;
-    padding: 15px; /* Creates the white frame around the image */
-    gap: 25px; /* Space between image and text */
+    padding: 15px;
+    /* Creates the white frame around the image */
+    gap: 25px;
+    /* Space between image and text */
     text-align: left;
     transition: transform 0.3s ease;
 }
 
 .client-rev-card:hover {
-    transform: translateY(-5px); /* Gentle float effect on hover */
+    transform: translateY(-5px);
+    /* Gentle float effect on hover */
 }
 
 /* Left Side: Image & Play Button */
@@ -898,7 +908,8 @@ html {
     height: 250px;
     border-radius: 8px;
     overflow: hidden;
-    flex-shrink: 0; /* Prevents the image from shrinking */
+    flex-shrink: 0;
+    /* Prevents the image from shrinking */
 }
 
 .client-image-wrapper img {
@@ -919,19 +930,22 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     cursor: pointer;
     transition: transform 0.2s ease;
 }
 
 .play-btn:hover {
-    transform: translate(-50%, -50%) scale(1.1); /* Zooms slightly on hover */
+    transform: translate(-50%, -50%) scale(1.1);
+    /* Zooms slightly on hover */
 }
 
 .play-btn i {
-    color: #FF5722; /* The orange play icon */
+    color: #FF5722;
+    /* The orange play icon */
     font-size: 16px;
-    margin-left: 3px; /* Optically centers the triangle */
+    margin-left: 3px;
+    /* Optically centers the triangle */
 }
 
 /* Right Side: Text Content */
@@ -950,7 +964,8 @@ html {
 }
 
 .quote-mark {
-    font-family: 'Georgia', serif; /* Gives the quote a curvy look */
+    font-family: 'Georgia', serif;
+    /* Gives the quote a curvy look */
     font-size: 60px;
     color: #FF5722;
     line-height: 0.5;
@@ -961,13 +976,15 @@ html {
     background-color: #ffffff;
     border-radius: 20px;
     padding: 5px 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Soft shadow for the pill */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    /* Soft shadow for the pill */
     display: flex;
     gap: 3px;
 }
 
 .stars-pill i {
-    color: #111; /* Black stars */
+    color: #111;
+    /* Black stars */
     font-size: 10px;
 }
 
@@ -992,6 +1009,7 @@ html {
     color: #777;
     margin: 0;
 }
+
 /* =========================================
    CONTACT SECTION
    ========================================= */
@@ -1037,14 +1055,16 @@ html {
 }
 
 .contact-details a:hover {
-    color: #c4ff00; /* Neon hover effect */
+    color: #c4ff00;
+    /* Neon hover effect */
 }
 
 /* Profile Card */
 .contact-profile-card {
     display: flex;
     align-items: center;
-    background-color: #0c0c0c; /* Very dark grey box */
+    background-color: #0c0c0c;
+    /* Very dark grey box */
     border: 1px solid #222;
     padding: 15px;
     border-radius: 12px;
@@ -1113,7 +1133,7 @@ html {
 .contact-form-wrapper input,
 .contact-form-wrapper textarea {
     width: 100%;
-    background-color: #0c0c0c; 
+    background-color: #0c0c0c;
     border: 1px solid #222;
     padding: 18px 20px;
     border-radius: 8px;
@@ -1121,12 +1141,13 @@ html {
     font-size: 15px;
     outline: none;
     transition: border-color 0.3s ease;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .contact-form-wrapper input:focus,
 .contact-form-wrapper textarea:focus {
-    border-color: #555; /* Highlights the box slightly when typing */
+    border-color: #555;
+    /* Highlights the box slightly when typing */
 }
 
 .contact-form-wrapper textarea {
@@ -1134,7 +1155,8 @@ html {
 }
 
 .submit-btn {
-    background-color: #c4ff00; /* The striking neon button */
+    background-color: #c4ff00;
+    /* The striking neon button */
     color: #000000;
     font-weight: 800;
     text-transform: uppercase;
@@ -1170,18 +1192,20 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 30px 50px;
-    border-top: 1px solid #222; 
+    border-top: 1px solid #222;
     border-bottom: 1px solid #222;
     position: relative;
 }
 
-.footer-links h4, .footer-copy h4 {
+.footer-links h4,
+.footer-copy h4 {
     margin: 0 0 5px 0;
     font-size: 15px;
     color: #fff;
 }
 
-.footer-links p, .footer-copy p {
+.footer-links p,
+.footer-copy p {
     margin: 0;
     font-size: 13px;
     color: #888;
@@ -1225,7 +1249,8 @@ html {
 .giant-footer-text {
     /* margin-top: 20px; */
     font-family: 'Archivo Black', sans-serif;
-    font-size: 20vw; /* Scales massively with screen size */
+    font-size: 20vw;
+    /* Scales massively with screen size */
     color: #ffffff;
     margin: 0;
     line-height: 0.75;
@@ -1235,18 +1260,22 @@ html {
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
     .contact-container {
-        flex-direction: column; /* Stacks the form under the text on phones */
+        flex-direction: column;
+        /* Stacks the form under the text on phones */
     }
+
     .footer-top {
         flex-direction: column;
         gap: 30px;
         text-align: center;
-        padding-top: 50px; 
+        padding-top: 50px;
     }
+
     .footer-copy {
         text-align: center;
     }
 }
+
 /* =========================================
    NEW MENUS & GLASSMORPHISM
    ========================================= */
@@ -1262,7 +1291,7 @@ html {
     padding: 10px 0;
     z-index: 100;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .dropdown-hidden {
@@ -1292,7 +1321,8 @@ html {
 
 /* Mobile Bottom Glass Nav */
 .mobile-bottom-nav {
-    display: none; /* Hidden on desktop */
+    display: none;
+    /* Hidden on desktop */
     position: fixed;
     bottom: 20px;
     left: 50%;
@@ -1303,7 +1333,7 @@ html {
     z-index: 1000;
     justify-content: space-around;
     padding: 15px 20px;
-    
+
     /* THE GLASS EFFECT */
     background: rgba(20, 20, 20, 0.6);
     backdrop-filter: blur(12px);
@@ -1328,8 +1358,10 @@ html {
 }
 
 .mobile-bottom-nav a:hover i {
-    color: #c4ff00; /* Neon highlight */
+    color: #c4ff00;
+    /* Neon highlight */
 }
+
 /* =========================================
    RESPONSIVE DESIGN (Tablets & Mobile)
    ========================================= */
@@ -1337,44 +1369,112 @@ html {
 /* 1. TABLET & SURFACE BOOK OPTIMIZATION (Max 1024px) 
    Everything stays, but perfectly resizes to fit the screen */
 @media (max-width: 1024px) {
-    .nav { padding: 0 20px; }
-    
+    .nav {
+        padding: 0 20px;
+    }
+
     /* Shrink the massive hero font */
-    .heading-txt h1 { font-size: 10vw; }
-    .heading-txt h1 span { margin-left: 100px; }
-    
+    .heading-txt h1 {
+        font-size: 10vw;
+    }
+
+    .heading-txt h1 span {
+        margin-left: 100px;
+    }
+
     /* Shrink images proportionally */
-    .home-img img { height: 400px; width: 400px; }
-    
+    .home-img img {
+        height: 400px;
+        width: 400px;
+    }
+
     /* Reorganize sections to use flexbox better */
-    .home-main-content { justify-content: space-around; }
-    .home-box { width: 300px; margin-top: 50px; }
-    .home-box-content { width: 100%; height: auto; padding: 20px; }
-    
+    .home-main-content {
+        justify-content: space-around;
+    }
+
+    .home-box {
+        width: 300px;
+        margin-top: 50px;
+    }
+
+    .home-box-content {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+    }
+
     /* Resize the connection box you wanted to keep here */
-    .home-bottom-content { 
-        width: 80%; 
-        max-width: 600px; 
-        margin-left: 0; 
-        height: auto; 
-        padding: 30px; 
+    .home-bottom-content {
+        width: 80%;
+        max-width: 600px;
+        margin-left: 0;
+        height: auto;
+        padding: 30px;
         text-align: center;
     }
-    .home-bottom-content h2 { font-size: 20px; }
+
+    .home-bottom-content h2 {
+        font-size: 20px;
+    }
 
     /* Shrink About Section */
-    .about-main { flex-direction: column; align-items: center; gap: 40px; }
-    .about-main-txt { width: 100%; max-width: 650px; height: auto; text-align: center; align-items: center;}
-    .about-img img { width: 100%; max-width: 500px; height: auto; }
-    .about-header-txt { width: 100%; font-size: 20px; }
+    .about-main {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .about-main-txt {
+        width: 100%;
+        max-width: 650px;
+        height: auto;
+        text-align: center;
+        align-items: center;
+    }
+
+    .about-img img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+    }
+
+    .about-header-txt {
+        width: 100%;
+        font-size: 20px;
+    }
 
     /* Adjust grids to prevent overflowing */
-    .works-grid { padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 30px; }
-    .works-box-1, .works-box-2, .works-box-3, .works-box-4 { align-self: center; margin: 0; }
-    .discover-projects-wrapper { margin-top: 0; align-self: center; padding: 0; }
-    
-    .client-reviews { flex-direction: column; align-items: center; }
-    .client-rev-card { width: 90%; }
+    .works-grid {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .works-box-1,
+    .works-box-2,
+    .works-box-3,
+    .works-box-4 {
+        align-self: center;
+        margin: 0;
+    }
+
+    .discover-projects-wrapper {
+        margin-top: 0;
+        align-self: center;
+        padding: 0;
+    }
+
+    .client-reviews {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .client-rev-card {
+        width: 90%;
+    }
 }
 
 
@@ -1389,123 +1489,367 @@ html {
     } */
 
     /* Navbar & Menus */
-    .mobile-bottom-nav { display: flex; }
-    .social.flx { display: none; }
-    #menu-btn { display: none !important; } 
-    #cv-btn { display: block; } 
-    .logo { width: auto; font-size: 18px; box-shadow: none; }
-    .home-btn { padding: 8px 12px; font-size: 12px; }
+    .mobile-bottom-nav {
+        display: flex;
+    }
+
+    .social.flx {
+        display: none;
+    }
+
+    #menu-btn {
+        display: none !important;
+    }
+
+    #cv-btn {
+        display: block;
+    }
+
+    .logo {
+        width: auto;
+        font-size: 18px;
+        box-shadow: none;
+    }
+
+    .home-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
 
     /* 2. HOME SECTION */
-    .heading-txt, .home-right-box, .home-bottom-conection { display: none !important; } 
-    .home-main-content { display: flex; flex-direction: column; align-items: center; gap: 30px; }
-    .home-img { order: -1; margin-top: 0; height: auto; } /* Image on top */
-    .home-img img { height: 280px; width: 280px; }
-    .home-left-box { order: 2; width: 100%; display: flex; justify-content: center; margin-top: 0; }
-    
-    /* Making the info box much smaller for mobile */
-    .home-box-content { width: 100%; max-width: 280px; height: 220px; }
-    .home-left-box-content p { font-size: 14px; }
-    .home-left-box-content-list { margin-top: 10px; }
-    .home-left-box-content-list span { font-size: 13px; }
-
-    /* 3. ABOUT SECTION */
-    .about-rating-rev-growth-box, .exp { display: none; } 
-    .about-main { margin: 20px 0; flex-direction: column; align-items: center; gap: 30px; }
-    .about-img img { width: 100%; max-width: 300px; height: auto; }
-    .about-header-txt { width: 100%; font-size: 15px; }
-    .main-txt { font-size: 14px; height: auto; text-align: justify; }
-
-    /* 4. SERVICES SECTION */
-    .services { 
-        padding: 0 !important; /* Removes leftover desktop padding */
-        align-items: center; /* Forces the column to the direct center */
+    .heading-txt,
+    .home-right-box,
+    .home-bottom-conection {
+        display: none !important;
     }
-    
-    .text-banner { font-size: 35px; padding: 15px 0; } 
-    
-    .serv-box { 
-        width: 100%; 
+
+    .home-main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .home-img {
+        order: -1;
+        margin-top: 0;
+        height: auto;
+    }
+
+    /* Image on top */
+    .home-img img {
+        height: 280px;
+        width: 280px;
+    }
+
+    .home-left-box {
+        order: 2;
+        width: 100%;
         display: flex;
         justify-content: center;
-        padding: 0 !important; 
-        margin: 0 auto 20px auto !important; 
-        align-self: center !important; 
-    } 
-    
+        margin-top: 0;
+    }
+
+    /* Making the info box much smaller for mobile */
+    .home-box-content {
+        width: 100%;
+        max-width: 280px;
+        height: 220px;
+    }
+
+    .home-left-box-content p {
+        font-size: 14px;
+    }
+
+    .home-left-box-content-list {
+        margin-top: 10px;
+    }
+
+    .home-left-box-content-list span {
+        font-size: 13px;
+    }
+
+    /* 3. ABOUT SECTION */
+    .about-rating-rev-growth-box,
+    .exp {
+        display: none;
+    }
+
+    .about-main {
+        margin: 20px 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .about-img img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .about-header-txt {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .main-txt {
+        font-size: 14px;
+        height: auto;
+        text-align: justify;
+    }
+
+    /* 4. SERVICES SECTION */
+    .services {
+        padding: 0 !important;
+        /* Removes leftover desktop padding */
+        align-items: center;
+        /* Forces the column to the direct center */
+    }
+
+    .text-banner {
+        font-size: 35px;
+        padding: 15px 0;
+    }
+
+    .serv-box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0 !important;
+        margin: 0 auto 20px auto !important;
+        align-self: center !important;
+    }
+
     /* Smaller Service Pill Card */
-    .service-pill-card { 
-        box-sizing: border-box; /* THE FIX: Stops padding from pushing the box to the right! */
+    .service-pill-card {
+        box-sizing: border-box;
+        /* THE FIX: Stops padding from pushing the box to the right! */
         width: 100%;
         max-width: 320px;
-        flex-direction: column; 
-        border-radius: 15px; 
-        padding: 20px 15px; 
-        text-align: center; 
-        gap: 15px; 
+        flex-direction: column;
+        border-radius: 15px;
+        padding: 20px 15px;
+        text-align: center;
+        gap: 15px;
         margin: 0 !important;
     }
-    
-    .service-info { flex-direction: column; gap: 5px; }
-    .service-details h2 { font-size: 20px; white-space: normal; width: auto; text-align: center; margin-bottom: 10px; }
-    .service-details h2::after { display: none; } 
-    .tags-row { flex-wrap: wrap; justify-content: center; gap: 8px; }
-    .tag { padding: 4px 10px; font-size: 9px; }
-    .service-image-box { width: 100%; height: 150px; border-radius: 10px; }
+
+    .service-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .service-details h2 {
+        font-size: 20px;
+        white-space: normal;
+        width: auto;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .service-details h2::after {
+        display: none;
+    }
+
+    .tags-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .tag {
+        padding: 4px 10px;
+        font-size: 9px;
+    }
+
+    .service-image-box {
+        width: 100%;
+        height: 150px;
+        border-radius: 10px;
+    }
 
     /* 5. WORKS SECTION */
-    .works-section { padding-top: 40px; padding-bottom: 40px; }
-    .works-bg-text { font-size: 25vw; top: 10vh; }
-    .works-grid { padding: 0; gap: 30px; margin-top: 0; }
-    
+    .works-section {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .works-bg-text {
+        font-size: 25vw;
+        top: 10vh;
+    }
+
+    .works-grid {
+        padding: 0;
+        gap: 30px;
+        margin-top: 0;
+    }
+
     /* Smaller Project Cards */
-    .project-card { width: 100%; max-width: 300px; padding: 15px; }
-    .card-header { margin-bottom: 15px; }
-    .card-title-area h3 { font-size: 16px; }
-    .card-tags span { font-size: 9px; }
-    .card-icon { width: 35px; height: 35px; font-size: 14px; }
-    .card-image-box { height: 180px; }
-    
+    .project-card {
+        width: 100%;
+        max-width: 300px;
+        padding: 15px;
+    }
+
+    .card-header {
+        margin-bottom: 15px;
+    }
+
+    .card-title-area h3 {
+        font-size: 16px;
+    }
+
+    .card-tags span {
+        font-size: 9px;
+    }
+
+    .card-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .card-image-box {
+        height: 180px;
+    }
+
     /* Smaller Discover Circle */
-    .discover-projects-wrapper { margin-top: 0; padding-left: 0; display: flex; justify-content: center; }
-    .projects-circle { width: 140px; height: 140px; }
-    .projects-circle p { font-size: 11px; }
+    .discover-projects-wrapper {
+        margin-top: 0;
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .projects-circle {
+        width: 140px;
+        height: 140px;
+    }
+
+    .projects-circle p {
+        font-size: 11px;
+    }
 
     /* 6. CLIENT REVIEWS */
-    .review-main-title { font-size: 16px; margin-bottom: 30px; }
-    .client-rev-card { flex-direction: column; padding: 15px; gap: 15px; width: 100%; max-width: 300px; }
-    .client-image-wrapper { width: 100%; height: 200px; }
-    .quote-mark { font-size: 35px; margin-top: 5px; }
-    .review-text { font-size: 13px; margin-bottom: 15px; }
+    .client-review-main {
+        padding: 60px 20px !important;
+        /* Removes leftover desktop padding */
+    }
+
+    .client-reviews {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Forces the cards to the direct center */
+        gap: 30px;
+    }
+
+    .review-main-title {
+        font-size: 16px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .client-rev-card {
+        box-sizing: border-box;
+        /* THE FIX: Keeps padding inside the width */
+        width: 100%;
+        max-width: 320px;
+        /* Matches your service cards perfectly */
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        margin: 0;
+    }
+
+    .client-image-wrapper {
+        width: 100%;
+        height: 200px;
+    }
+
+    .quote-mark {
+        font-size: 35px;
+        margin-top: 5px;
+    }
+
+    .review-text {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
 
     /* 7. CONTACT SECTION */
-    .contact-container { display: flex; flex-direction: column; gap: 40px; align-items: center; }
-    .contact-form-wrapper { order: -1; width: 100%; max-width: 320px; } /* Form on top */
-    .contact-info { order: 2; text-align: center; display: flex; flex-direction: column; align-items: center; width: 100%; }
-    .contact-info h2 { font-size: 26px; }
-    .contact-details p { font-size: 14px; }
-    .contact-profile-card { flex-direction: column; text-align: center; width: 100%; max-width: 280px; gap: 15px; }
-
-    /* 8. FOOTER SECTION */
-    .giant-footer-text { display: none; } 
-    
-    /* Hide Links and Copyright */
-    .footer-links, .footer-copy { display: none; }
-    
-    .footer-top { 
-        padding: 40px 0 100px 0; /* Huge bottom padding to clear the glass nav */
-        border: none; /* Removes the top and bottom lines */
+    .contact-container { 
         display: flex; 
-        justify-content: center; /* Centers the button perfectly */
+        flex-direction: column; 
+        gap: 30px; /* Controls the spacing between all the stacked items */
+        align-items: center; 
     }
     
+    /* THE MAGIC TRICK: This breaks the items out of their wrapper so we can order them individually */
+    .contact-info { display: contents; } 
+    
+    /* Item 1: The Heading at the very top */
+    .contact-info h2 { 
+        order: 1; 
+        font-size: 26px; 
+        text-align: center; 
+        margin-bottom: 0; 
+    }
+    
+    /* Item 2: The Form sits in the middle */
+    .contact-form-wrapper { 
+        order: 2; 
+        width: 100%; 
+        max-width: 320px; 
+    } 
+    
+    /* Item 3: The Email and Phone under the form */
+    .contact-details { 
+        order: 3; 
+        text-align: center; 
+        margin-bottom: 0; 
+    }
+    .contact-details p { font-size: 14px; }
+    
+    /* Item 4: The Profile Card at the very bottom */
+    .contact-profile-card { 
+        order: 4; 
+        flex-direction: column; 
+        text-align: center; 
+        width: 100%; 
+        max-width: 280px; 
+        gap: 15px; 
+    }
+    /* 8. FOOTER SECTION */
+    .giant-footer-text {
+        display: none;
+    }
+
+    /* Hide Links and Copyright */
+    .footer-links,
+    .footer-copy {
+        display: none;
+    }
+
+    .footer-top {
+        padding: 40px 0 100px 0;
+        /* Huge bottom padding to clear the glass nav */
+        border: none;
+        /* Removes the top and bottom lines */
+        display: flex;
+        justify-content: center;
+        /* Centers the button perfectly */
+    }
+
     /* Reset the button positioning so it just sits naturally in the middle */
     .back-to-top {
-        position: relative; 
+        position: relative;
         left: auto;
         top: auto;
-        transform: none; 
+        transform: none;
     }
-    
-    body { padding-bottom: 80px; } 
+
+    /* body { padding-bottom: 80px; }  */
 }
