@@ -1746,9 +1746,9 @@ html {
         gap: 30px;
     }
 
-    .review-main-title {
-        font-size: 16px;
-        margin-bottom: 30px;
+    .review-main-title { 
+        font-size: 16px; 
+        margin-bottom: 15px; /* Reduced from 30px to pull the cards closer to the text */
         text-align: center;
     }
 
@@ -1823,26 +1823,28 @@ html {
         gap: 15px; 
     }
     /* 8. FOOTER SECTION */
-    .giant-footer-text {
-        display: none;
+    #contact-section {
+        padding-bottom: 10px !important; /* Strips away the excess space below the profile card */
     }
 
+    .giant-footer-text { display: none; } 
+    
     /* Hide Links and Copyright */
-    .footer-links,
-    .footer-copy {
-        display: none;
+    .footer-links, .footer-copy { display: none; }
+    
+    .footer-top { 
+        padding: 10px 0 100px 0; /* Reduced top padding to pull the orange arrow up */
+        border: none; 
+        display: flex; 
+        justify-content: center; 
     }
-
-    .footer-top {
-        padding: 40px 0 100px 0;
-        /* Huge bottom padding to clear the glass nav */
-        border: none;
-        /* Removes the top and bottom lines */
-        display: flex;
-        justify-content: center;
-        /* Centers the button perfectly */
+    
+    .back-to-top {
+        position: relative; 
+        left: auto;
+        top: auto;
+        transform: none; 
     }
-
     /* Reset the button positioning so it just sits naturally in the middle */
     .back-to-top {
         position: relative;
