@@ -141,7 +141,7 @@ window.addEventListener('scroll', () => {
 // 6. SCROLLSPY (HIGHLIGHT ACTIVE MENU ITEM)
 // Get all the sections and all the dropdown links
 const allSections = document.querySelectorAll('#home, #about, #services, #works, #contact-section');
-const allNavLinks = document.querySelectorAll('#dropdown-menu a');
+const allNavLinks = document.querySelectorAll('#dropdown-menu a, .mobile-bottom-nav a');
 
 window.addEventListener('scroll', () => {
     let currentSection = '';
