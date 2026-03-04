@@ -6,19 +6,27 @@ html {
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box; /* Highly recommended to prevent layout bugs */
-    font-family: 'Inter', sans-serif; /* Makes INTER the default for everything */
+    box-sizing: border-box;
+    /* Highly recommended to prevent layout bugs */
+    font-family: 'Inter', sans-serif;
+    /* Makes INTER the default for everything */
 }
 
 /* This applies Montserrat to all your main headings */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: 'Montserrat', sans-serif;
 }
 
 /* Keep your giant background text in Archivo Black because it looks awesome */
-.works-bg-text, .text-banner, .giant-footer-text {
+.works-bg-text,
+.text-banner,
+.giant-footer-text {
     font-family: 'Archivo Black', sans-serif;
 }
+
 :root {
     --display: flex
 }
@@ -325,8 +333,9 @@ h1, h2, h3, h4 {
 
 .home-bottom-conection {
     width: 100%;
-    /* margin: 50% auto; */
     display: flex;
+    justify-content: center;
+    /* THE FIX: Naturally aligns everything to the absolute center */
     margin-top: -12%;
     position: relative;
     z-index: 1;
@@ -341,7 +350,10 @@ h1, h2, h3, h4 {
     align-items: center;
     border-radius: 16px;
     background-color: var(--home-background-color);
-    margin-left: 373.5px;
+
+    /* REMOVED the 373.5px margin completely! */
+    margin: 0;
+
     position: relative;
     box-shadow: var(--box-shadow);
 }
@@ -438,12 +450,21 @@ h1, h2, h3, h4 {
 .client-rating-box,
 .client-rev-box {
     position: relative;
-    height: 70px;
-    width: 250px;
-    padding: 10px;
+    /* THE FIX: A strict, matching height so they are identical */
+    height: 115px; 
+    width: 260px; 
+    
+    padding: 20px; 
+    box-sizing: border-box; /* THE MAGIC: Prevents padding from stretching the box */
+    
     box-shadow: var(--box-shadow);
     background-color: var(--home-background-color);
     border-radius: 8px;
+    
+    /* Keeps the text perfectly centered vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
 }
 
 .about-header-txt {
@@ -568,26 +589,22 @@ h1, h2, h3, h4 {
 }
 
 /* Injects the Right Arrow for Desktop */
+/* Swaps to a Down Arrow for Mobile */
 .step-number::after {
-    content: ' →';
+    content: ' ↓';
     display: inline-block;
-    /* CRITICAL: Allows us to stretch the text */
+    font-size: 20px;
 
-    /* 1. TO MAKE IT BIGGER */
-    font-size: 22px;
+    /* Safari Support */
+    -webkit-transform: scaleX(1) scaleY(1.8);
+    -webkit-transform-origin: center;
 
-    /* 2. TO MAKE IT LONGER */
-    transform: scaleX(2.2);
-    /* Stretches it to be 2.5x wider! Change this number to make it longer/shorter */
-    transform-origin: left;
-    /* Ensures it stretches exactly to the right */
+    /* Standard */
+    transform: scaleX(1) scaleY(1.8);
+    transform-origin: center;
 
-    /* 3. ALIGNMENT */
-    margin-left: 5px;
-    /* Space between the "01" and the arrow */
-    position: relative;
-    top: 2px;
-    /* Nudges it down slightly to stay perfectly centered with the text */
+    margin-left: 8px;
+    top: 4px;
 }
 
 /* --- The Main Container --- */
@@ -1312,18 +1329,27 @@ h1, h2, h3, h4 {
 .footer-bottom {
     margin-top: 20px;
     text-align: center;
-    padding: 0 50px 0 50px;
+    
+    /* THE FIX 1: Remove the 50px side padding so the text has the full screen to stretch */
+    padding: 0; 
+    
+    width: 100%;
+    overflow: hidden; /* Acts as a safety net to prevent horizontal scrolling */
 }
 
 .giant-footer-text {
-    /* margin-top: 20px; */
     font-family: 'Archivo Black', sans-serif;
-    font-size: 20vw;
-    /* Scales massively with screen size */
+    
+    /* THE FIX: Bumped this up to fill the empty space */
+    font-size: 16.5vw; 
+    
     color: #ffffff;
     margin: 0;
-    line-height: 0.75;
-    letter-spacing: -0.02em;
+    
+    /* Tightened the line height slightly so it stays snug at this larger size */
+    line-height: 0.75; 
+    letter-spacing: -0.01em;
+    white-space: nowrap;
 }
 
 /* =========================================
@@ -1524,17 +1550,27 @@ h1, h2, h3, h4 {
     color: #c4ff00;
     /* Neon highlight */
 }
+
+/* --- ACTIVE STATE FOR MOBILE NAV --- */
 /* --- ACTIVE STATE FOR MOBILE NAV --- */
 .mobile-bottom-nav a.active-link i {
-    color: #c4ff00 !important; /* Turns the icon neon green */
-    transform: translateY(-3px) scale(1.1); /* Makes the icon pop up slightly */
+    color: #c4ff00 !important; 
+    
+    /* Safari Support */
+    -webkit-transform: translateY(-3px) scale(1.1);
+    -webkit-transition: all 0.3s ease;
+    
+    /* Standard */
+    transform: translateY(-3px) scale(1.1); 
     transition: all 0.3s ease;
 }
 
 .mobile-bottom-nav a.active-link span {
-    color: #ffffff !important; /* Brightens the text */
+    color: #ffffff !important;
+    /* Brightens the text */
     font-weight: bold;
 }
+
 /* =========================================
    RESPONSIVE DESIGN (Tablets & Mobile)
    ========================================= */
