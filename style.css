@@ -36,7 +36,6 @@ html {
 :root {
     --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2)
 }
-
 .nav {
     padding: var(--padding);
     height: 60px;
@@ -201,7 +200,7 @@ html {
 
 .home-left-box-content p {
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -286,8 +285,15 @@ html {
     border-radius: 50%;
     border: var(--border);
     margin-left: -10px;
+    overflow: hidden; /* Added this to clip the image to the circle */
 }
 
+/* Add this brand new rule right below it */
+.right-box-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Forces the image to perfectly fill the circle */
+}
 .home-right-box-bottom-content {
     height: 100px;
     width: 200px;
@@ -298,6 +304,8 @@ html {
 }
 
 .home-bottom-conection {
+    width: 100%;
+    /* margin: 50% auto; */
     display: flex;
     margin-top: -12%;
     position: relative;
@@ -313,7 +321,7 @@ html {
     align-items: center;
     border-radius: 16px;
     background-color: var(--home-background-color);
-    margin-left: 372px;
+    margin-left: 373.5px;
     position: relative;
     box-shadow: var(--box-shadow);
 }
@@ -450,9 +458,10 @@ html {
 }
 
 .main-txt {
-    height: 260px;
+    height: auto;
+    line-height: 1.6;
+    color: #444;
 }
-
 .exp {
     text-transform: capitalize;
     position: relative;
@@ -556,8 +565,8 @@ html {
     padding: 15px 15px 15px 50px;
 
     width: 100%;
-    max-width: 900px;
-    margin: 20px auto;
+    /* max-width: 900px; */
+    margin-top: 20px;
 }
 
 /* --- Left Side (Text & Tags) --- */
@@ -580,7 +589,7 @@ html {
     color: #fff;
     font-family: 'Archivo Black', sans-serif;
     /* Using your portfolio font! */
-    font-size: 36px;
+    font-size: 28px;
     margin: 0 0 15px 0;
     line-height: 1;
     position: relative;
@@ -646,7 +655,7 @@ html {
 .serv-box:nth-child(2),
 .serv-box:nth-child(4) {
     align-self: flex-end;
-    padding-right: 50px;
+    padding-right: 70px;
 }
 
 .serv-box:nth-child(4) {
@@ -1042,7 +1051,16 @@ html {
     text-transform: uppercase;
     color: #ffffff;
 }
-
+.contact-promo-text {
+    font-size: 16px;
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 450px;
+}
+.contact-promo-text strong {
+    color: #c4ff00; /* Highlights "FREE custom marketing audit" in your neon green */
+}
 .contact-details p {
     font-size: 16px;
     color: #cccccc;
@@ -1258,7 +1276,78 @@ html {
     line-height: 0.75;
     letter-spacing: -0.02em;
 }
+/* =========================================
+   FLOATING DESKTOP MENU (Scroll Behavior)
+   ========================================= */
+@media (min-width: 769px) {
+    /* The button morphs into a bottom-right circle */
+    .floating-btn {
+        position: fixed !important;
+        bottom: 40px !important;
+        
+        /* THE MATH: 40px width + 5px right = 45px (Safely inside your 50px padding!) */
+        right: 5px !important; 
+        width: 40px !important;
+        height: 40px !important;
+        
+        border-radius: 50% !important;
+        background-color: #000000 !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
+        z-index: 9999 !important;
+    }
 
+    /* Resizes the icon to perfectly fit the new 40px circle */
+    .floating-btn a i {
+        color: #ffffff !important;
+        font-size: 16px !important;
+        transition: color 0.3s ease;
+    }
+
+    /* Modifies the Dropdown to pop UP from the bottom */
+    .floating-dropdown {
+        position: fixed !important;
+        top: auto !important; 
+        bottom: 90px !important; /* Positions it right above the new button */
+        right: 10px !important; /* Keeps the menu safely inside the gutter area too */
+        transform-origin: bottom right !important; 
+    }
+
+    /* Reverses the hide animation so it slides down to disappear */
+    .floating-dropdown.dropdown-hidden {
+        transform: translateY(20px) scale(0.95) !important; 
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* Slides up to reveal */
+    .floating-dropdown.dropdown-visible {
+        transform: translateY(0) scale(1) !important;
+        opacity: 1;
+        visibility: visible;
+    }
+    /* The Dynamic Light Mode for the button */
+    .floating-btn-light {
+        background-color: #ffffff !important; /* Turns button white */
+    }
+
+    .floating-btn-light a i {
+        color: #000000 !important; /* Turns the hamburger icon black */
+    }
+    /* The Dynamic Light Mode for the Dropdown Menu */
+    .floating-dropdown-light {
+        background-color: #ffffff !important;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; /* Slightly softer shadow for light mode */
+    }
+
+    .floating-dropdown-light a {
+        color: #000000 !important; /* Turns the text black */
+    }
+
+    .floating-dropdown-light a:hover {
+        background-color: #FF5722 !important; /* Keeps your signature orange hover */
+        color: #ffffff !important; /* Turns text white when hovering over the orange */
+    }
+}
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
     .contact-container {
@@ -1295,7 +1384,13 @@ html {
     transition: all 0.3s ease;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
-
+/* =========================================
+   SCROLLSPY ACTIVE LINK
+   ========================================= */
+#dropdown-menu a.active-link {
+    color: #FF5722 !important; /* Turns the active section link orange */
+    font-weight: 900 !important; /* Makes it slightly bolder */
+}
 .dropdown-hidden {
     opacity: 0;
     visibility: hidden;
@@ -1781,43 +1876,40 @@ html {
         margin-bottom: 15px;
     }
 
-    /* 7. CONTACT SECTION */
-    .contact-container { 
-        display: flex; 
-        flex-direction: column; 
-        gap: 30px; /* Controls the spacing between all the stacked items */
-        align-items: center; 
-    }
-    
-    /* THE MAGIC TRICK: This breaks the items out of their wrapper so we can order them individually */
-    .contact-info { display: contents; } 
-    
     /* Item 1: The Heading at the very top */
     .contact-info h2 { 
         order: 1; 
         font-size: 26px; 
         text-align: center; 
-        margin-bottom: 0; 
+        margin-bottom: 15px; /* Added spacing */
+    }
+
+    /* Item 2: The New Promo Text */
+    .contact-promo-text {
+        order: 2;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 30px;
     }
     
-    /* Item 2: The Form sits in the middle */
+    /* Item 3: The Form sits in the middle */
     .contact-form-wrapper { 
-        order: 2; 
+        order: 3; /* Changed from 2 to 3 */
         width: 100%; 
         max-width: 320px; 
     } 
     
-    /* Item 3: The Email and Phone under the form */
+    /* Item 4: The Email and Phone under the form */
     .contact-details { 
-        order: 3; 
+        order: 4; /* Changed from 3 to 4 */
         text-align: center; 
         margin-bottom: 0; 
     }
     .contact-details p { font-size: 14px; }
     
-    /* Item 4: The Profile Card at the very bottom */
+    /* Item 5: The Profile Card at the very bottom */
     .contact-profile-card { 
-        order: 4; 
+        order: 5; /* Changed from 4 to 5 */
         flex-direction: column; 
         text-align: center; 
         width: 100%; 
