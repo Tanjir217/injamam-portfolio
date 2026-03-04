@@ -4,7 +4,6 @@ html {
 }
 /* Prevents the entire website from wiggling left and right */
 html, body {
-    overflow-x: hidden;
     width: 100%;
     position: relative;
 }
