@@ -2,11 +2,14 @@
 html {
     scroll-behavior: smooth;
 }
+
 /* Prevents the entire website from wiggling left and right */
-html, body {
+html,
+body {
     width: 100%;
     position: relative;
 }
+
 * {
     padding: 0;
     margin: 0;
@@ -95,6 +98,30 @@ h4 {
     margin-left: 5px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
+    /* THE FIX: Tells the box to smoothly animate any changes over 0.3 seconds */
+    transition: all 0.3s ease;
+}
+
+/* --- THE NEW NAV ICON HOVER ANIMATION --- */
+.nav .box:hover {
+    transform: translateY(-5px);
+    /* Lifts the box up off the page */
+    background-color: #c4ff00;
+    /* Fills the box with your signature neon green */
+    box-shadow: 0 8px 15px rgba(196, 255, 0, 0.4);
+    /* Adds a matching neon glow underneath */
+}
+
+/* Adds a subtle "pop" to the icon or logo inside the box when hovered */
+.nav .box:hover i,
+.nav .box:hover img {
+    transform: scale(1.15);
+}
+
+/* Ensures the icons smoothly return to normal size when your mouse leaves */
+.nav .box i,
+.nav .box img {
+    transition: transform 0.3s ease;
 }
 
 .icon {
@@ -455,20 +482,21 @@ h4 {
 .client-rev-box {
     position: relative;
     /* THE FIX: A strict, matching height so they are identical */
-    height: 115px; 
-    width: 260px; 
-    
-    padding: 20px; 
-    box-sizing: border-box; /* THE MAGIC: Prevents padding from stretching the box */
-    
+    height: 115px;
+    width: 260px;
+
+    padding: 20px;
+    box-sizing: border-box;
+    /* THE MAGIC: Prevents padding from stretching the box */
+
     box-shadow: var(--box-shadow);
     background-color: var(--home-background-color);
     border-radius: 8px;
-    
+
     /* Keeps the text perfectly centered vertically */
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .about-header-txt {
@@ -556,17 +584,52 @@ h4 {
 }
 
 /* Container styling to match your dark theme */
+/* --- INFINITE SCROLLING MARQUEE --- */
 .text-banner {
     background-color: #000000;
     padding-top: 50px;
     padding-bottom: 50px;
     font-family: 'Archivo Black', sans-serif;
     font-size: 98px;
-    /* Make it huge! */
     text-transform: uppercase;
     white-space: nowrap;
-    /* text-align: center; */
     overflow: hidden;
+    display: flex; /* Ensures the track stays strictly horizontal */
+    width: 100%;
+}
+
+/* The invisible train track that physically moves the text */
+.marquee-track {
+    display: flex;
+    width: max-content; /* Allows the track to be as long as it needs to be */
+    
+    /* 15s controls the speed. Change it to 10s for faster, or 20s for slower */
+    animation: scroll-right 15s linear infinite;
+}
+
+/* 1. The Normal Text */
+.solid {
+    color: #ffffff;
+    padding-right: 15px; /* Adds a little breathing room around the dashes */
+}
+
+/* 2. The Outlined Text */
+.outlined {
+    color: transparent;
+    -webkit-text-stroke: 2px #ffffff;
+    padding-right: 15px;
+}
+
+/* THE ANIMATION: Moves from Left to Right endlessly */
+@keyframes scroll-right {
+    0% {
+        /* Starts shifted exactly 50% to the left (showing the second group) */
+        transform: translateX(-50%); 
+    }
+    100% {
+        /* Moves all the way right until it perfectly resets */
+        transform: translateX(0%); 
+    }
 }
 
 /* 1. The Normal Text */
@@ -596,18 +659,20 @@ h4 {
 /* Swaps to a Down Arrow for Mobile */
 /* Injects the FontAwesome Right Arrow for Desktop */
 .step-number::after {
-    content: "\f061"; /* FontAwesome Right Arrow code */
+    content: "\f061";
+    /* FontAwesome Right Arrow code */
     font-family: "FontAwesome", "Font Awesome 6 Free", "Font Awesome 5 Free";
-    font-weight: 900; /* Required for FontAwesome solid icons */
-    
+    font-weight: 900;
+    /* Required for FontAwesome solid icons */
+
     display: inline-block;
-    font-size: 18px; 
+    font-size: 18px;
     margin-left: 12px;
-    
+
     /* Safari Support */
     -webkit-transform: scaleX(2.5);
     -webkit-transform-origin: left;
-    
+
     /* Standard */
     transform: scaleX(2.5);
     transform-origin: left;
@@ -654,28 +719,30 @@ h4 {
 
 .service-details h2 {
     color: #fff;
-    font-family: 'Archivo Black', sans-serif; /* Or Montserrat, whichever you prefer! */
-    
+    font-family: 'Archivo Black', sans-serif;
+    /* Or Montserrat, whichever you prefer! */
+
     /* 1. THE FIX: Shrink the font size so the longest phrase fits perfectly */
-    font-size: 16px; 
-    
+    font-size: 16px;
+
     margin: 0 0 15px 0;
     line-height: 1;
     position: relative;
-    
+
     /* 2. THE MAGIC: Forces the browser to NEVER break this into two lines */
-    white-space: nowrap; 
-    width: max-content; 
+    white-space: nowrap;
+    width: max-content;
 }
 
 /* --- The Little Tags --- */
 .tags-row {
     display: flex;
     gap: 8px;
-    
+
     /* THE FIX: Allows the tags to drop to a second line if they run out of space */
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
+
 .tag {
     color: #fff;
     font-size: 10px;
@@ -848,10 +915,10 @@ h4 {
     box-shadow: var(--box-shadow);
     cursor: pointer;
     width: 400px;
-    
+
     /* THE GUARANTEED FIX: Pulls the cards forward so nothing can ever block them */
     position: relative;
-    z-index: 10; 
+    z-index: 10;
 }
 
 .card-header {
@@ -891,6 +958,7 @@ h4 {
     font-size: 18px;
     transition: all 0.3s ease;
 }
+
 .card-image-box {
     width: 100%;
     height: 300px;
@@ -938,9 +1006,9 @@ h4 {
     justify-content: flex-start;
     align-items: center;
     padding-left: 20px;
-    
+
     /* THE FIX: Tells the mouse to click "through" the invisible box */
-    pointer-events: none; 
+    pointer-events: none;
 }
 
 .porjects-box {
@@ -948,10 +1016,11 @@ h4 {
     position: relative;
     cursor: pointer;
     transition: transform 0.3s ease;
-    
+
     /* THE FIX: Reactivates the mouse specifically for the circle so hover still works here */
-    pointer-events: auto; 
+    pointer-events: auto;
 }
+
 .projects-box p {
     font-size: 14px;
     font-weight: 700;
@@ -1307,25 +1376,23 @@ h4 {
 }
 
 /* The Top Line with Links */
-.footer-top {
-    padding: var(--padding);
+/* --- FOOTER TYPOGRAPHY & LAYOUT --- */
+.status-indicator {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 30px 50px;
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
-    position: relative;
+    gap: 10px;
+    margin-bottom: 5px;
 }
 
-.footer-links h4,
+.status-indicator h4,
 .footer-copy h4 {
-    margin: 0 0 5px 0;
+    margin: 0;
     font-size: 15px;
     color: #fff;
+    letter-spacing: 1px;
 }
 
-.footer-links p,
+.footer-availability p,
 .footer-copy p {
     margin: 0;
     font-size: 13px;
@@ -1336,11 +1403,60 @@ h4 {
     text-align: right;
 }
 
+/* --- THE NEON PULSING DOT --- */
+.pulsing-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #c4ff00;
+    /* Your signature neon green */
+    border-radius: 50%;
+
+    /* Creates the infinite radar pulse effect */
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(196, 255, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(196, 255, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(196, 255, 0, 0);
+    }
+}
+
+/* The Top Line with Links & Borders */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* THE FIX: Perfectly aligns the left and right text blocks vertically */
+    padding: 35px 50px;
+    /* Clean breathing room inside the borders */
+
+    /* The Top and Bottom Borders */
+    border-top: 1px solid #333;
+    /* Slightly lighter gray so it pops against the black */
+    border-bottom: 1px solid #333;
+
+    position: relative;
+}
+
 /* The Magic Overlapping Orange Arrow */
 .back-to-top {
     position: absolute;
     left: 50%;
-    top: 29px;
+
+
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .back-to-top a {
@@ -1364,25 +1480,22 @@ h4 {
 .footer-bottom {
     margin-top: 20px;
     text-align: center;
-    
-    /* THE FIX 1: Remove the 50px side padding so the text has the full screen to stretch */
-    padding: 0; 
-    
+    padding: 0;
     width: 100%;
-    overflow: hidden; /* Acts as a safety net to prevent horizontal scrolling */
+    overflow: hidden;
 }
 
 .giant-footer-text {
     font-family: 'Archivo Black', sans-serif;
-    
-    /* THE FIX: Bumped this up to fill the empty space */
-    font-size: 16.5vw; 
-    
+
+
+    font-size: 16.5vw;
+
     color: #ffffff;
     margin: 0;
-    
-    /* Tightened the line height slightly so it stays snug at this larger size */
-    line-height: 0.75; 
+
+
+    line-height: 0.75;
     letter-spacing: -0.01em;
     white-space: nowrap;
 }
@@ -1473,9 +1586,10 @@ h4 {
 
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
+
     /* 1. Shrinks the massive 50px side gaps down to a mobile-friendly 20px */
     :root {
-        --padding: 0px 20px; 
+        --padding: 0px 20px;
     }
 
     /* 2. Forces EVERY box to naturally stretch vertically to fit the text */
@@ -1489,7 +1603,7 @@ h4 {
         height: auto !important;
         min-height: auto;
     }
-    
+
     /* ... (The rest of your existing mobile CSS stays here) ... */
     .contact-container {
         flex-direction: column;
@@ -1607,14 +1721,14 @@ h4 {
 /* --- ACTIVE STATE FOR MOBILE NAV --- */
 /* --- ACTIVE STATE FOR MOBILE NAV --- */
 .mobile-bottom-nav a.active-link i {
-    color: #c4ff00 !important; 
-    
+    color: #c4ff00 !important;
+
     /* Safari Support */
     -webkit-transform: translateY(-3px) scale(1.1);
     -webkit-transition: all 0.3s ease;
-    
+
     /* Standard */
-    transform: translateY(-3px) scale(1.1); 
+    transform: translateY(-3px) scale(1.1);
     transition: all 0.3s ease;
 }
 
@@ -1891,17 +2005,18 @@ h4 {
     /* Swaps to a Down Arrow for Mobile */
     /* Swaps to FontAwesome Down Arrow for Mobile */
     .step-number::after {
-        content: "\f063"; /* FontAwesome Down Arrow code */
+        content: "\f063";
+        /* FontAwesome Down Arrow code */
         font-family: "FontAwesome", "Font Awesome 6 Free", "Font Awesome 5 Free";
         font-weight: 900;
-        
+
         display: inline-block;
         font-size: 12px;
-        
+
         /* Reset horizontal stretch, stretch vertical instead */
         -webkit-transform: scaleX(1) scaleY(1.2);
         -webkit-transform-origin: center;
-        
+
         transform: scaleX(1) scaleY(1.2);
         transform-origin: center;
 
